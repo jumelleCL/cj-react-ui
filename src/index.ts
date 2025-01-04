@@ -1,4 +1,5 @@
-import SimpleButton from "./ButtonSimple/SimpleButton";
-import ButtonAnimated from "./AnimatedButton/AnimatedButton";
+import SimpleButton from "./SimpleButton/SimpleButton";
+import InputLabel from "./InputLabel/InputLabel";
+import InputSimple from "./InputSimple/InputSimple";
 
-export {ButtonAnimated, SimpleButton};
+export {SimpleButton, InputLabel, InputSimple};

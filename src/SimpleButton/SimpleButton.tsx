@@ -6,7 +6,7 @@ type Props = ComponentProps<"button"> &{
   textColor?: string;
   backgroundColor?: string;
 };
-const ButtonAnimated = ({ text, textColor, backgroundColor , ...rest}: Props) => {
+const SimpleButton = ({ text, textColor, backgroundColor , ...rest}: Props) => {
   return (
     <Button textColor={textColor} backgroundColor={backgroundColor} {...rest}>
       {text}
@@ -37,4 +37,4 @@ const Button = styled.button<{textColor?: string, backgroundColor?: string}>`
   }
 `;
 
-export default ButtonAnimated;
+export default SimpleButton;
