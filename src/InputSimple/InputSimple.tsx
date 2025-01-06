@@ -1,14 +1,26 @@
+import { ComponentProps, useId } from "react";
 import styled from "styled-components";
-export default function InputSimple() {
+
+type Props = ComponentProps<"input"> & {
+  label?: string;
+  type?: string;
+  colorText?: string;
+  color?: string;
+};
+export default function InputSimple({label, type, colorText, color, ...rest}: Props) {
+  const id = useId();
+
   return (
     <Input className="form">
       <input
         className="input"
-        placeholder="Type your text"
+        placeholder={label || 'Input'}
         required
-        type="text"
+        id={id}
+        type={type}
+        {...rest}
       />
-      <span className="input-border"></span>
+      <label htmlFor={id} className="input-border"></label>
     </Input>
   );
 }

@@ -9,7 +9,7 @@ type Props = ComponentProps<"button"> &{
 const SimpleButton = ({ text, textColor, backgroundColor , ...rest}: Props) => {
   return (
     <Button textColor={textColor} backgroundColor={backgroundColor} {...rest}>
-      {text}
+      {text || "Button"}
     </Button>
   );
 };
