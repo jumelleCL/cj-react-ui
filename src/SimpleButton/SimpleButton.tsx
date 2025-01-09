@@ -14,27 +14,44 @@ const SimpleButton = ({ text, textColor, backgroundColor , ...rest}: Props) => {
   );
 };
 
-const Button = styled.button<{textColor?: string, backgroundColor?: string}>`
+const Button = styled.button<{ textColor?: string; backgroundColor?: string }>`
   cursor: pointer;
-  background-color: ${(props) => props.backgroundColor ||'#3b82f6'};
-  color: ${(props) => props.textColor || 'white'};
+  background-color: ${(props) => props.backgroundColor || "#3b82f6"};
+  color: ${(props) => props.textColor || "white"};
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
-  border-bottom: 4px solid #2563eb;
+  position: relative;
+  overflow: hidden;
 
-  transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #2563eb;
+    transition: height 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), filter 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover {
     filter: brightness(1.1);
     transform: translateY(-1px); 
-    border-bottom-width: 6px; 
+    &::after {
+      height: 6px;
+    }
   }
+
   &:active {
-    border-bottom-width: 2px;
     filter: brightness(0.9);
     transform: translateY(2px);
+    &::after {
+      height: 2px;
+    }
   }
 `;
+
 
 export default SimpleButton;
