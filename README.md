@@ -23,7 +23,7 @@ import { ButtonAnimated } from "cj-react-ui";
 function App() {
   return (
     <div>
-      <ButtonAnimated text="Click Me" />
+      <SimpleButton text="Click Me" />
     </div>
   );
 }
@@ -32,3 +32,29 @@ export default App;
 ```
 
 ## Components
+
+### Buttons
+
+#### Simple Button
+
+```js
+<SimpleButton text="Click Me" textColor="white" backgroundColor="red" type="submit"/>
+<SimpleButton text="Click me" textColor="#ddd" backgroundColor="#2a5736"/>
+```
+
+### Inputs
+
+#### Input Simple
+
+The input simple does not show a label at all the time, but only use a placehoder that you can modify by using the props `label` or `placeholder`.
+
+```js
+<InputSimple label="Name" type="password" colorText="red" color="black"/>
+<InputSimple placeholder="Name" type="email"/>
+```
+
+#### Input with Label
+
+```js
+<SimpleButton text="Click Me" textColor="" backgroundColor=""/>
+```

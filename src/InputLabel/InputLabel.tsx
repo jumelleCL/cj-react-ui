@@ -64,7 +64,7 @@ const Input = styled.div`
   .input:focus ~ label,
   input:valid ~ label {
     transform: translateY(-50%) scale(0.8);
-    background-color: inherit;
+    background-color: transparent;
     padding: 0 0.2em;
     color: #2196f3;
   }

@@ -3,18 +3,19 @@ import styled from "styled-components";
 
 type Props = ComponentProps<"input"> & {
   label?: string;
+  placeholer?: string;
   type?: string;
   colorText?: string;
   color?: string;
 };
-export default function InputSimple({label, type, colorText, color, ...rest}: Props) {
+export default function InputSimple({label, placeholder, type, colorText, color, ...rest}: Props) {
   const id = useId();
 
   return (
     <Input className="form">
       <input
         className="input"
-        placeholder={label || 'Input'}
+        placeholder={label || placeholder || 'Input'}
         required
         id={id}
         type={type}

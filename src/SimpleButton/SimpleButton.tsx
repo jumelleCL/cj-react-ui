@@ -2,7 +2,7 @@ import React, { ComponentProps } from "react";
 import styled from "styled-components";
 
 type Props = ComponentProps<"button"> &{
-  text: string;
+  text?: string;
   textColor?: string;
   backgroundColor?: string;
 };
@@ -29,8 +29,11 @@ const Button = styled.button<{ textColor?: string; backgroundColor?: string }>`
     bottom: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background-color: #2563eb;
+    height: 5px;
+    background: ${(props) =>
+      props.backgroundColor
+        ? `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), ${props.backgroundColor}`
+        : `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), #3b82f6`};
     transition: height 150ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
