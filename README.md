@@ -56,5 +56,5 @@ The input simple does not show a label at all the time, but only use a placehode
 #### Input with Label
 
 ```js
-<SimpleButton text="Click Me" textColor="" backgroundColor=""/>
+<InputLabel label="Name" type="password" colorText="red" color="black"/>
 ```
