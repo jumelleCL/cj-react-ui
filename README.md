@@ -37,6 +37,15 @@ export default App;
 
 #### Simple Button
 
+A basic button that allows customization of text, colors, and type.
+
+Available Props:
+
+- text (string): Button text
+- textColor (string): Text color (e.g., "white", "#ddd").
+- backgroundColor (string): Background color of the button.
+- type (string): Button type (e.g., "submit", "button").
+
 ```js
 <SimpleButton text="Click Me" textColor="white" backgroundColor="red" type="submit"/>
 <SimpleButton text="Click me" textColor="#ddd" backgroundColor="#2a5736"/>
@@ -46,15 +55,70 @@ export default App;
 
 #### Input Simple
 
-The input simple does not show a label at all the time, but only use a placehoder that you can modify by using the props `label` or `placeholder`.
+An input field that displays a placeholder based on the label or placeholder prop.
+
+Available Props:
+
+- label (string): Text used as a placeholder.
+- placeholder (string): Placeholder text if label is not provided.
+- type (string): Input type (e.g., "text", "password", "email").
+- colorText (string): Color of the entered text.
+- color (string): Background color of the input field.
+- error (string): Error message displayed below the field.
 
 ```js
-<InputSimple label="Name" type="password" colorText="red" color="black"/>
+<InputSimple label="Name" type="password" colorText="red" color="black" error="Error message"/>
 <InputSimple placeholder="Name" type="email"/>
 ```
 
 #### Input with Label
 
+Similar to InputSimple, but includes a persistent label above the field.
+
+Available Props:
+
+- Same props as InputSimple.
+
 ```js
-<InputLabel label="Name" type="password" colorText="red" color="black"/>
+<InputLabel label="Name" type="password" colorText="red" color="black" error="Error message"/>
+```
+
+### Loading's
+
+#### Loading Simple
+
+A basic loading indicator.
+
+Available Props:
+
+- color (string): Color of the indicator.
+
+```js
+<LoadingSimple color="black"/>
+```
+
+#### Loading Skeleton
+
+A skeleton loader for placeholder content while loading elements.
+
+Available Props:
+
+- Currently does not support any props.
+
+```js
+<LoadingSkeleton/>
+```
+
+### ToolTip
+
+A component to display additional information in a tooltip.
+
+Available Props:
+
+- info (string): Text displayed in the tooltip.
+- color (string): Tooltip text color.
+- size (number): Text size.
+
+```js
+<ToolTip info="hello world" color="white" size={20}/>
 ```

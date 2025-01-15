@@ -6,35 +6,43 @@ type Props = ComponentProps<"input"> & {
   type?: string;
   colorText?: string;
   color?: string;
+  error?: string;
+  placeholder?: string;
 };
 
 export default function InputLabel({
   colorText,
   type,
+  placeholder,
   label,
   color,
+  error,
   ...rest
 }: Props) {
   const id = useId();
   return (
-    <Input className="input-group">
+    <Input className="input-group" error={!!error}>
       <input
         required
         type={type}
         autoComplete="on"
         id={id}
         className="input"
+        placeholder=""
         {...rest}
       />
       <label htmlFor={id} className="user-label">
-        {label || "Input"}
+        {label || placeholder || "Input"}
       </label>
+      <span>{error || " "}</span>
     </Input>
   );
 }
 
-const Input = styled.div`
+const Input = styled.div<{ error: boolean }>`
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   .input {
     border: solid 1.5px #9e9e9e;
@@ -61,11 +69,18 @@ const Input = styled.div`
     border: 1.5px solid #1a73e8;
   }
 
-  .input:focus ~ label,
-  input:valid ~ label {
+  .input:focus ~ .user-label,
+  input:valid ~ .user-label {
     transform: translateY(-50%) scale(0.8);
     background-color: transparent;
     padding: 0 0.2em;
     color: #2196f3;
+  }
+
+  span {
+    color: ${({ error }) => (error ? "red" : "transparent")};
+    padding-left: 0.5rem;
+    min-height: 1.5rem;
+    font-size: 0.875rem;
   }
 `;
