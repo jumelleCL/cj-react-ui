@@ -5,5 +5,6 @@ import ToolTip from "./ToolTip/ToolTip";
 import LoadingSimple from "./LoadingSimple/LoadingSimple";
 import LoadingSkeleton from "./LoadingSkeleton/LoadingSkeleton";
 import CheckboxSimple from "./checkboxSimple/CheckboxSimple";
+import ModalSimple from "./ModalSimple/ModalSimple";
 
-export {SimpleButton, InputLabel, InputSimple, ToolTip, LoadingSimple, LoadingSkeleton, CheckboxSimple};
+export {SimpleButton, InputLabel, InputSimple, ToolTip, LoadingSimple, LoadingSkeleton, CheckboxSimple, ModalSimple};

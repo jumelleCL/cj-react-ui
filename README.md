@@ -122,3 +122,20 @@ Available Props:
 ```js
 <ToolTip info="hello world" color="white" size={20}/>
 ```
+
+### CheckBox
+
+#### Checkbox simple
+
+A simple component with a box to check and a label.
+
+Available Props:
+
+- label(string): The text besides the box
+- BorderColor(string): The color of the box
+- TextColor(string): The color of the text put in label
+- Color(string): The color of the fill in the box when it's checked
+
+```js
+<CheckboxSimple label="Check this" borderColor="black" textColor="red" color="#d34"/>
+```

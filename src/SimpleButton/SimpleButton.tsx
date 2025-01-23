@@ -5,11 +5,12 @@ type Props = ComponentProps<"button"> &{
   text?: string;
   textColor?: string;
   backgroundColor?: string;
+  children?: React.ReactNode;
 };
-const SimpleButton = ({ text, textColor, backgroundColor , ...rest}: Props) => {
+const SimpleButton = ({ text, textColor, children, backgroundColor , ...rest}: Props) => {
   return (
     <Button textColor={textColor} backgroundColor={backgroundColor} {...rest}>
-      {text || "Button"}
+      {text || children || "Button"}
     </Button>
   );
 };
